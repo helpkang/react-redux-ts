@@ -3,7 +3,7 @@ import { ActionType, isActionOf } from "typesafe-actions";
 
 import { todo } from './todo/reducer'
 
-import { Todo } from './todo/types'
+
 
 import * as actions from "./todo/actions";
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
@@ -11,10 +11,8 @@ import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import * as API from './todo/service'
 
 import weatherEpic from './todo/epic'
+import { RootState } from './root-stat';
 
-export type RootState = {
-    todo: Todo;
-}
 
 export type ActionsType = ActionType<typeof actions>;
 
@@ -24,13 +22,15 @@ declare global {
     }
 }
 
-    
+
 const epicMiddleware = createEpicMiddleware<
-  ActionsType,
-  ActionsType,
-  RootState
+    //   ActionsType,
+    //   ActionsType,
+    any,
+    any,
+    RootState
 >({
-  dependencies: API,
+    dependencies: API,
 });
 
 

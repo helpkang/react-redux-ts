@@ -1,8 +1,8 @@
 import React, { ChangeEvent, FormEvent, ReactElement, useCallback, useState } from 'react'
 
 import {useDispatch, useSelector} from 'react-redux'
-import { RootState } from './modules';
-import { addTodo, deleteTodo } from './modules/todo/actions';
+import { RootState } from './modules/root-stat';
+import { deleteTodo } from './modules/todo/actions';
 
 
 export const TodoList =  () => {

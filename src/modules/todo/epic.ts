@@ -1,32 +1,31 @@
 import { Epic } from "redux-observable";
-import { from} from "rxjs";
-import { exhaustMap, filter, map } from "rxjs/operators";
-import { ActionType, isActionOf } from "typesafe-actions";
+import { from } from "rxjs";
+import { exhaust, exhaustMap, filter, map, mergeMap, switchMap } from "rxjs/operators";
+import { isActionOf } from "typesafe-actions";
 
 import * as actions from "./actions";
-import { Todo } from "./types";
 
 import * as API from './service'
+// import { RootState } from "../root-stat"; 
 
-export type ActionsType = ActionType<typeof actions>;
-
-type RootState = { todo: Todo }
-
+// export type TodoActionsType = ActionType<typeof actions>;
 
 
 export const weatherGetEpic: Epic<
-  ActionsType,
-  ActionsType,
-  RootState,
-  typeof API 
-> = (action$, store, {callData}) =>
+  any,
+  any,
+  // RootState,
+  any,
+  typeof API
+> = (action$, store, { callData }) =>
     action$.pipe(
       filter(isActionOf(actions.addTodo)),
-      exhaustMap((action) =>
-        from(from(callData(action.payload)).pipe(
+      mergeMap(action =>
+        from(callData(action.payload)).pipe(
           map(actions.addTodoAsync)
-        ))
+        )
       )
     );
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default [weatherGetEpic];
