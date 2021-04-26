@@ -26,8 +26,6 @@ const rootRecuder = combineReducers({
 
 const middlewares: any[] = []; // 나중에 이 자리에 미들웨어 추가
 
-const store = createStore(rootRecuder, composeEnhancers(
+export const store = createStore(rootRecuder, composeEnhancers(
     applyMiddleware(...middlewares)
 ));
-
-export default store
