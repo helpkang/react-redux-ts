@@ -1,6 +1,5 @@
-import {createAction  } from 'typesafe-actions';
+import { createAction  } from 'typesafe-actions';
 
-// const {createStandardAction} = deprecated;
 
 const ADD_DOTO = 'todo/ADD_DOTO';
 const ADD_DOTO_ASYNC = 'todo/ADD_DOTO_ASYNC';

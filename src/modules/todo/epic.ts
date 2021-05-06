@@ -5,7 +5,7 @@ import { isActionOf } from "typesafe-actions";
 
 import * as actions from "./actions";
 
-import * as API from '../service/todoApi'
+import * as API from './todoApi'
 // import { RootState } from "../root-stat"; 
 
 // export type TodoActionsType = ActionType<typeof actions>;

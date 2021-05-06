@@ -8,7 +8,7 @@ import { todo } from './todo/reducer'
 import * as actions from "./todo/actions";
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 
-import * as API from './service/todoApi'
+import * as API from './todo/todoApi'
 
 import weatherEpic from './todo/epic'
 import { RootState } from './root-stat';
