@@ -1,4 +1,4 @@
-import {TodoAction, Todo} from './types'
+import {Todo} from './types'
 import {ActionType, createReducer} from 'typesafe-actions';
 
 import * as todoActions from './actions'

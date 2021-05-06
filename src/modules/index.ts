@@ -1,5 +1,5 @@
 import { combineReducers, applyMiddleware, compose, createStore } from 'redux'
-import { ActionType, isActionOf } from "typesafe-actions";
+import { ActionType } from "typesafe-actions";
 
 import { todo } from './todo/reducer'
 
@@ -8,7 +8,7 @@ import { todo } from './todo/reducer'
 import * as actions from "./todo/actions";
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 
-import * as API from './todo/service'
+import * as API from './service/todoApi'
 
 import weatherEpic from './todo/epic'
 import { RootState } from './root-stat';
