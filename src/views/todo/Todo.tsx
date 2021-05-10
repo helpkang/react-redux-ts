@@ -1,7 +1,7 @@
 import { ChangeEvent, FormEvent, useCallback, useState } from 'react'
 
 import {useDispatch} from 'react-redux'
-import { addTodo } from './modules/todo/actions';
+import { addTodo } from 'modules/todo/actions';
 
 
 export const Todo =  () => {

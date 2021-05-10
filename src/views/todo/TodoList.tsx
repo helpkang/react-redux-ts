@@ -1,8 +1,9 @@
 import { useCallback} from 'react'
 
 import {useDispatch, useSelector} from 'react-redux'
-import { deleteTodo } from './modules/todo/actions';
-import { TodoType } from './modules/todo/types';
+import { deleteTodo } from 'modules/todo/actions';
+import { TodoType } from 'modules/todo/types';
+
 
 
 export const TodoList =  () => {

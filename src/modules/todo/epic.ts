@@ -4,7 +4,7 @@ import { exhaustMap, filter, map } from "rxjs/operators";
 import { isActionOf } from "typesafe-actions";
 
 
-import * as API from './todoApi'
+import * as API from './service'
 import { actions, TodoAction, TodoType } from "./types";
 
 
@@ -14,12 +14,12 @@ export const weatherGetEpic: Epic<
   TodoAction,
   TodoType,
   typeof API
-> = (action$, store, { callData }) =>
+> = (action$, store, { addTodo: callData }) =>
     action$.pipe(
       filter(isActionOf(actions.addTodo)),
       exhaustMap(action =>
         from(callData(action.payload)).pipe(
-          map(actions.addTodoAsync)
+          map(actions.addTodoComplete)
         )
       )
     );

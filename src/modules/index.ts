@@ -6,7 +6,7 @@ import { todo } from './todo/reducer'
 
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 
-import * as API from './todo/todoApi'
+import * as API from './todo/service'
 
 import { weatherEpic } from './todo/epic'
 import { RootState } from './root-stat';

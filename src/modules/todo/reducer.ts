@@ -13,7 +13,7 @@ export const todo = createReducer<Todo, TodoAction>(initState)
 .handleAction(todoActions.addTodo, (state, action)=>{
     return {...state, progress: true}
 })
-.handleAction(todoActions.addTodoAsync, (state, action)=>{
+.handleAction(todoActions.addTodoComplete, (state, action)=>{
     return {todos: [...state.todos, action.payload], progress: false}
 })
 .handleAction(todoActions.deleteTodo, (state, action)=>{
