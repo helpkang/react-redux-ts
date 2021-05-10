@@ -1,21 +1,20 @@
 import { Epic } from "redux-observable";
 import { from } from "rxjs";
 import { exhaustMap, filter, map } from "rxjs/operators";
-import { isActionOf } from "typesafe-actions";
+import { ActionType, isActionOf } from "typesafe-actions";
 
 import * as actions from "./actions";
 
 import * as API from './todoApi'
-// import { RootState } from "../root-stat"; 
+import { TodoType } from "./types";
 
-// export type TodoActionsType = ActionType<typeof actions>;
+export type TodoActionsType = ActionType<typeof actions>;
 
 
 export const weatherGetEpic: Epic<
-  any,
-  any,
-  // RootState,
-  any,
+  TodoActionsType,
+  TodoActionsType,
+  TodoType,
   typeof API
 > = (action$, store, { callData }) =>
     action$.pipe(

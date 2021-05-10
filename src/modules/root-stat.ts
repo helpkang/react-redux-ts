@@ -1,3 +1,3 @@
-import { Todo } from './todo/types'
+import { TodoType } from './todo/types'
 
-export type RootState = { todo: Todo }
+export type RootState = TodoType;

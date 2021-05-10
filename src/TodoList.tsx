@@ -1,12 +1,12 @@
 import { useCallback} from 'react'
 
 import {useDispatch, useSelector} from 'react-redux'
-import { RootState } from './modules/root-stat';
 import { deleteTodo } from './modules/todo/actions';
+import { TodoType } from './modules/todo/types';
 
 
 export const TodoList =  () => {
-    const todoList = useSelector((state:RootState)=>state.todo.todos)
+    const todoList = useSelector((state:TodoType)=>state.todo.todos)
 
     const dispatch = useDispatch();
 

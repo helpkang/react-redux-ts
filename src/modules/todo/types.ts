@@ -8,3 +8,7 @@ export type Todo = {
     todos: Array<string>;
     progress: boolean;
 }
+export type TodoType = {
+    todo:Todo
+}
+
