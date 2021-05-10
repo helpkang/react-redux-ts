@@ -1,8 +1,6 @@
 import sleep from 'sleep-promise';
 
-const  callData = async (todo: string): Promise<string> => {
-    await sleep(2000);
+export async function  callData  (todo: string): Promise<string> {
+    await sleep(500);
     return todo;
 }
-
-export {callData}

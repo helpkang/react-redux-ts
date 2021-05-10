@@ -1,20 +1,18 @@
 import { combineReducers, applyMiddleware, compose, createStore } from 'redux'
-import { ActionType } from "typesafe-actions";
 
 import { todo } from './todo/reducer'
 
 
 
-import * as actions from "./todo/actions";
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 
 import * as API from './todo/todoApi'
 
-import {weatherEpic} from './todo/epic'
+import { weatherEpic } from './todo/epic'
 import { RootState } from './root-stat';
+import { TodoAction } from './todo/types';
 
 
-export type ActionsType = ActionType<typeof actions>;
 
 declare global {
     interface Window {
@@ -24,10 +22,8 @@ declare global {
 
 
 const epicMiddleware = createEpicMiddleware<
-    //   ActionsType,
-    //   ActionsType,
-    any,
-    any,
+    TodoAction,
+    TodoAction,
     RootState
 >({
     dependencies: API,
