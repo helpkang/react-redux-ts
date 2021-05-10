@@ -1,16 +1,15 @@
-import {Todo} from './types'
-import {ActionType, createReducer} from 'typesafe-actions';
+import { createReducer} from 'typesafe-actions';
 
-import * as todoActions from './actions'
+import {actions as todoActions, Todo, TodoAction} from './types'
 
-export type TodosAction = ActionType<typeof todoActions>;
+
 
 const initState : Todo = {
     todos: [],
     progress: false,
 }
 
-export const todo = createReducer<Todo, TodosAction>(initState)
+export const todo = createReducer<Todo, TodoAction>(initState)
 .handleAction(todoActions.addTodo, (state, action)=>{
     return {...state, progress: true}
 })
