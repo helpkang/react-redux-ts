@@ -1,7 +1,8 @@
 import { TodoAdd } from "./TodoAdd"
 import { TodoList } from "./TodoList"
 
-export const Todo = () => {
+// eslint-disable-next-line import/no-anonymous-default-export
+export default () => {
     return (
         <>
             <TodoAdd></TodoAdd>
